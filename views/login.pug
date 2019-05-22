@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+    style.
+      * {
+      box-sizing: border-box;
+      }
+      .column {
+      float: left;
+      width: 50%;
+      padding: 30px;
+      }
+      .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      }
+  body
+    .row
+      .column
+        form(action='/login', method='get')
+          h1 Login
+          label(for='usr') Username:
+          input#username.form-control(type='text', name='username')
+          br
+          label(for='pwd') Password:
+          input#password.form-control(type='password', name='password')
+          br
+          p= message1
+          button.btn.btn-primary(type='submit') Accedi
+      .column
+        h1 Registrazione
+        form(action='/registrazione', method='get')
+          label(for='usr') Username:
+          input#username.form-control(type='text', name='username')
+          br
+          label(for='pwd') Password:
+          input#password.form-control(type='password', name='password')
+          label(for='tag') Tag:
+          input#tag.form-control(type='text', name='tag')
+          br
+          p= message2
+          button.btn.btn-primary(type='submit') Registrati
+          

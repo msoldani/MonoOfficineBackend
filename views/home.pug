@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    title Home
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+  body
+    .container.mt-3
+      form(action='/inserisci')
+        .input-group.mb-3
+          .input-group-prepend
+            span.input-group-text Inserisci evento
+          input#titolo.form-control(type='text', placeholder='titolo', name='titolo')
+          input#data.form-control(type='text', placeholder='data (gg/mm/aa)', name='data')
+          input#ora.form-control(type='text', placeholder='ora (xx:xx)', name='ora')
+          input#via.form-control(type='text', placeholder='via', name='via')
+          input#tag.form-control(type='text', placeholder='tag', name='tag')
+          button.btn.btn-primary(type='submit') Invia
+    .container.mt-3
+      form(action='/data')
+        .input-group.mb-3
+          .input-group-prepend
+            span.input-group-text Ricerca con data
+          input#data.form-control(type='text', placeholder='data (gg/mm/aa)', name='data')
+          button.btn.btn-primary(type='submit') Invia
+    .container.mt-3
+      form(action='/tag')
+        .input-group.mb-3
+          .input-group-prepend
+            span.input-group-text Ricerca con tag
+          input#tag.form-control(type='text', placeholder='#tag', name='tag')
+          button.btn.btn-primary(type='submit') Invia
+    .container.mt-3
+      form(action='/via')
+        .input-group.mb-3
+          .input-group-prepend
+            span.input-group-text Ricerca con posizione
+          input#via.form-control(type='text', placeholder='via', name='via')
+          button.btn.btn-primary(type='submit') Invia
+    .container.mt-3
+      p=message
