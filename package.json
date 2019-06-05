@@ -11,10 +11,10 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "express": "^4.13.4",
+    "express": "^4.17.1",
     "express-session": "^1.16.1",
     "git": "^0.1.5",
-    "mongodb": "^3.2.4",
+    "mongodb": "^3.2.6",
     "pug": "^2.0.3",
     "update": "^0.7.4"
   }
