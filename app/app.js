@@ -11,9 +11,6 @@ app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.get('/', function (req, res) {
-    res.render("login");
-});
 
 app.get('/login/:username/:password', function (req, res) {
       MongoClient.connect('mongodb+srv://root:xxx123@soldanimirco-tpwn0.mongodb.net/test?retryWrites=true&w=majority', function(err, db) {
@@ -82,7 +79,7 @@ app.post('/noleggio', function (req, res) {
     MongoClient.connect('mongodb+srv://root:xxx123@soldanimirco-tpwn0.mongodb.net/test?retryWrites=true&w=majority', function(err, db) {
         if (err) {throw err;}
             var dbo = db.db("MonoOfficine");
-            var newRist = {username:req.body.User, dataInizio: req.body.dataIn, oraInizio: req.body.oraIn , dataFine:req.body.dataFi, oraFine:req.body.oraFi};
+            var newRist = {username:req.body.User, idMonopattino: req.body.idMonopattino, dataInizio: req.body.dataIn, oraInizio: req.body.oraIn , dataFine:req.body.dataFi, oraFine:req.body.oraFi};
             console.log(newRist);
             dbo.collection("Noleggio").insertOne(newRist, function(err, result) {
                 if (err) throw err;
